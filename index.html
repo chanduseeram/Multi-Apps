@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MultiApp</title>
+  <style>
+
+    * {
+        user-select: none;
+    }
+    body {
+      background-color: #00152b;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 80px;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0px;
+    }
+
+    .card {
+      background-color: #495c7a;
+      border-radius: 15px;
+      transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+    }
+
+    .card img {
+      border-radius: 15px;
+      width: 100%;
+    }
+
+    .card h2 {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    .blurred {
+      opacity: 0.4;
+      filter: blur(2px);
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      z-index: 2;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="font-size: 2.5rem; font-weight: bold;">MultiApp</h1>
+  <p style="color: #94a3b8; margin-bottom: 30px;">A collection of small apps</p><br><br>
+
+  <div class="card-container" id="cardContainer">
+    <a href="/NumberToWord.jsp" class="card">
+      <img src="NumberToWord.png" alt="Number to word image" />
+    </a>
+
+    <a href="/TextToSpeech.html" class="card">
+      <img src="TextToSpeech.png" alt="Text to Speech logo" />
+    </a>
+
+    <a href="LanguageTranslator.html" class="card">
+      <img src="LanguageTranslator.png" alt="Language Translator logo" />
+    </a>
+
+    <a href="/AgeCalculator.html" class="card">
+      <img src="AgeCalculator.png" alt="Age Calculator logo" />
+    </a>
+
+  </div>
+
+  <script>
+    const container = document.getElementById("cardContainer");
+    const cards = container.querySelectorAll(".card");
+
+    cards.forEach((card) => {
+      card.addEventListener("mouseenter", () => {
+        cards.forEach((c) => {
+          if (c !== card) {
+            c.classList.add("blurred");
+          }
+        });
+      });
+
+      card.addEventListener("mouseleave", () => {
+        cards.forEach((c) => c.classList.remove("blurred"));
+      });
+    });
+  </script>
+
+</body>
+</html>

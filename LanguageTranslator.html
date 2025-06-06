@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Translator</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: rgb(158, 13, 255);
+        }
+
+        .coontainer {
+            width: 600px;
+            padding: 20px;
+            background: #e8e8e8;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.115);
+            border-radius: 7px;
+        }
+
+        .input_box {
+            display: flex;
+            border: 1px solid #acacac;
+        }
+
+        .input_box textarea {
+            width: 100%;
+        }
+
+        textarea {
+            border: 0;
+            outline: none;
+            padding: 10px;
+            height: 150px;
+            background: inherit;
+            resize: none;
+            margin: 10px 0px;
+        }
+
+        textarea:nth-child(1) {
+            border-right: 1px solid #acacac;
+        }
+
+        .row {
+            display: flex;
+            width: 100%;
+            border: 1px solid #acacac;
+            border-top: none;
+        }
+
+        .row .select {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px 20px;
+        }
+
+        .select select {
+            border: 0;
+            outline: none;
+            padding: 3px;
+            border-radius: 3px;
+            border: 1px solid #acacac;
+            background: inherit;
+            width: 100%;
+        }
+
+        button {
+            border: 0;
+            outline: none;
+            width: 100%;
+            text-align: center;
+            background: rgb(158, 13, 255);
+            cursor: pointer;
+            padding: 12px 0px;
+            margin-top: 10px;
+            color: #fff;
+            border-radius: 5px;
+            transition: background .3s ease;
+        }
+
+        button:hover {
+            background: rgb(137, 0, 229);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="coontainer">
+        <div class="wrapper">
+            <div class="input_box">
+                <textarea placeholder="Enter Text" class="from_text"></textarea>
+                <textarea placeholder="Translation.." class="to_text" readonly disabled></textarea>
+            </div>
+            <div class="row">
+                <div class="select">
+                    <select name="from">
+                        
+                    </select>
+                </div>
+
+                <div class="select">
+                    <select name="to">
+
+                    </select>
+                </div>
+            </div>
+
+            <button>Translate</button>
+        </div>
+    </div>
+
+    <script src="country.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
